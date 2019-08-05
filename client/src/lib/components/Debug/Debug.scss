@@ -1,0 +1,16 @@
+.debug {
+  .story {
+    padding-top: calc(40px + 1rem) !important;
+  }
+
+  &.darkMode {
+    .debug-wrapper-info pre,
+    .debug-wrapper h2 {
+      color: #fff;
+    }
+
+    .nav-link.active {
+      background-color: #222 !important;
+    }
+  }
+}
