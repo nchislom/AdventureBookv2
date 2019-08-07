@@ -1,5 +1,6 @@
 // /database/story.js
 const mongoose = require("mongoose");
+const storySeeds = require("./storySeeds");
 const Schema = mongoose.Schema;
 
 // this will be our data base's data structure 
@@ -18,4 +19,4 @@ const DataSchema = new Schema(
 );
 
 // export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model("Story", DataSchema);
+module.exports = mongoose.model("Story", DataSchema, "storydb");
