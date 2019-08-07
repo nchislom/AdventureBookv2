@@ -7,8 +7,7 @@ var seeds = [
         correct_choice: "choice_a",
         choice_a: "LEAVE YOUR HIDING PLACE TO HELP",
         choice_b: "STAY HIDDEN",
-        wrong_choice_result: "<p>You stay in your hiding place</p><p>You hide from the soldiers</p><p>The next day you journey to a nearby town</p><p>Three days later the war claims your life</p>",
-        image_url: ""
+        wrong_choice_result: "<p>You stay in your hiding place</p><p>You hide from the soldiers</p><p>The next day you journey to a nearby town</p><p>Three days later the war claims your life</p>"
     },
     {
         id: 2,
@@ -18,8 +17,7 @@ var seeds = [
         correct_choice: "choice_b",
         choice_a: "YOU MAKE A BREAK FOR IT",
         choice_b: "HOLD YOUR GROUND",
-        wrong_choice_result: "<p>You sprint to the opening</p><p>A bullet pierces your heart</p><p>You burst into a violet inferno that engulfs anybody close enough</p><p>The war continues</p>",
-        image_url: ""
+        wrong_choice_result: "<p>You sprint to the opening</p><p>A bullet pierces your heart</p><p>You burst into a violet inferno that engulfs anybody close enough</p><p>The war continues</p>"
     },
     {
         id: 3,
@@ -29,8 +27,7 @@ var seeds = [
         correct_choice: "choice_b",
         choice_a: "ANSWER HIS QUESTION",
         choice_b: "SPIT IN HIS FACE",
-        wrong_choice_result: "<p>You tell him you saw her fall to the ground</p><p>And that she wasn’t breathing</p><p>And about her unbelievable eyes</p><p>The man grins at you in a way that makes you feel sick</p><p>His grip tightens</p><p>You hear a snap</p><p>Everything fades to black</p>",
-        image_url: ""
+        wrong_choice_result: "<p>You tell him you saw her fall to the ground</p><p>And that she wasn’t breathing</p><p>And about her unbelievable eyes</p><p>The man grins at you in a way that makes you feel sick</p><p>His grip tightens</p><p>You hear a snap</p><p>Everything fades to black</p>"
     },
     {
         id: 4,
@@ -40,8 +37,7 @@ var seeds = [
         correct_choice: "choice_a",
         choice_a: "COUNTER",
         choice_b: "DODGE",
-        wrong_choice_result: "<p>You avoid the woman’s strike</p><p>But the tiger grabs you by the back of your collar like you were its kitten</p><p>“You are not ready for the burden she placed on you.”</p><p>The woman makes a hand gesture</p><p>You wake up days later in a hotel</p><p>No woman, no tiger</p><p>You wander the world looking for an explanation of that strange night</p>",
-        image_url: ""
+        wrong_choice_result: "<p>You avoid the woman’s strike</p><p>But the tiger grabs you by the back of your collar like you were its kitten</p><p>“You are not ready for the burden she placed on you.”</p><p>The woman makes a hand gesture</p><p>You wake up days later in a hotel</p><p>No woman, no tiger</p><p>You wander the world looking for an explanation of that strange night</p>"
     },
     {
         id: 5,
@@ -51,8 +47,7 @@ var seeds = [
         correct_choice: "choice_b",
         choice_a: "I DON’T WANT TO BE A PART OF ANYTHING!",
         choice_b: "GOTTEN MYSELF INTO?",
-        wrong_choice_result: "<p>“Fine. This time I’ll ask.”</p><p>The woman explains there are bigger forces at work than just a petty war for resources.</p><p>She needs The Lady Deborah’s power to win the battle this night.</p><p>You gratefully relinquish your inheritance.</p><p>You pass out from the shock.</p><p>You wake up to a new day.</p><p>Life goes on.</p>",
-        image_url: ""
+        wrong_choice_result: "<p>“Fine. This time I’ll ask.”</p><p>The woman explains there are bigger forces at work than just a petty war for resources.</p><p>She needs The Lady Deborah’s power to win the battle this night.</p><p>You gratefully relinquish your inheritance.</p><p>You pass out from the shock.</p><p>You wake up to a new day.</p><p>Life goes on.</p>"
     },
     {
         id: 6,
@@ -62,8 +57,7 @@ var seeds = [
         correct_choice: "choice_b",
         choice_a: "IT BURNS! WHAT AM I EVEN DOING?",
         choice_b: "I WILL DO THIS.",
-        wrong_choice_result: "<p>You manage to save the lives like Eve said,</p><p>But the flames engulf you.</p>",
-        image_url: ""
+        wrong_choice_result: "<p>You manage to save the lives like Eve said,</p><p>But the flames engulf you.</p>"
     },
     {
         id: 7,
@@ -73,8 +67,7 @@ var seeds = [
         correct_choice: "",
         choice_a: "",
         choice_b: "",
-        wrong_choice_result: "",
-        image_url: ""
+        wrong_choice_result: ""
     }
 ];
 
