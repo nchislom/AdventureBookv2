@@ -117,7 +117,7 @@ app.get("/api/stats", (req, res) => {
 
 // API route used to retrieve full story, mainly just used for testing
 app.get("/api/story/all", (req, res) => {
-  db.Story.findAll({}, function (err, chapterInfo) {
+  db.Story.find({}, function (err, chapterInfo) {
     res.json(chapterInfo);
   });
 });
