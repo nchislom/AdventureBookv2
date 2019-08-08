@@ -76,7 +76,7 @@ app.post('/register', function(req, res){
 });
 
 var LocalStrategy = require('passport-local').Strategy;
-passport.use(new LocalStrategy(
+passport.use('local-login', new LocalStrategy(
   function(username, password, done) {
     User.getUserByUsername(username, function(err, user){
       if(err) throw err;
@@ -112,12 +112,19 @@ if (process.env.NODE_ENV === "production") {
 
 // Authentication Routes
 // Endpoint to login
-app.post('/login',
-  passport.authenticate('local'),
-  function(req, res) {
-    res.send(req.user);
-  }
-);
+// app.post('/login',
+//   passport.authenticate('local'),
+//   function(req, res) {
+//     res.send(req.user);
+//   }
+// );
+
+// process the login form
+app.post('/login', passport.authenticate('local-login', {
+  successRedirect : '/profile', // redirect to the secure profile section
+  failureRedirect : '/login', // redirect back to the signup page if there is an error
+  failureFlash : true // allow flash messages
+}));
 
 // Endpoint to get current user
 app.get('/user', function(req, res){
@@ -211,7 +218,7 @@ app.get("/api/stats", (req, res) => {
 
 // API route used to retrieve full story, mainly just used for testing
 app.get("/api/story/all", (req, res) => {
-  db.Story.findAll({}, function (err, chapterInfo) {
+  db.Story.find({}, function (err, chapterInfo) {
     res.json(chapterInfo);
   });
 });
