@@ -129,6 +129,18 @@ app.get("/api/story/:chapter", (req, res) => {
   });
 });
 
+// API route to create user
+app.post("/api/users", (req, res) => {
+  db.User.create(req.body, function (err, userInfo) {
+    if (err) throw err;
+
+    console.log(userInfo);
+    
+
+    res.json(userInfo);
+  });
+});
+
 // Send every other request to the React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
