@@ -7,6 +7,8 @@ const app = express();
 var storyLength = 0;
 var totalUsers = 0;
 var totalWins = 0;
+var sizeUser = 0;
+var sizeStory = 0;
 
 // Require all models
 var db = require("./database/models");
@@ -108,10 +110,29 @@ app.get("/api/stats", (req, res) => {
     }
   });
 
+  // get current size of collections
+  db.User.collection.stats((err, results) => {
+    if(err){
+      console.log(err);
+    } else {
+      sizeUser = results.storageSize;
+    }
+  });
+
+  db.Story.collection.stats((err, results) => {
+    if(err){
+      console.log(err);
+    } else {
+      sizeStory = results.storageSize;
+    }
+  });
+  
   res.json({
     "Current Story Size": storyLength,
     "Registered Users": totalUsers,
-    "Global Wins": totalWins
+    "Global Wins": totalWins,
+    "User Collection Size": sizeUser,
+    "Story Collection Size": sizeStory
   });
 });
 
@@ -139,6 +160,11 @@ app.post("/api/users", (req, res) => {
 
     res.json(userInfo);
   });
+});
+
+// Send every other request to the React app
+app.get("/admin", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/public/admin.html"));
 });
 
 // Send every other request to the React app
