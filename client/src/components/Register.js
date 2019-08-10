@@ -41,7 +41,8 @@ class Register extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         password: this.state.password
-      })
+	  })
+	  console.log(this.state)
         .then(res => this.getUsers())
         .catch(err => console.log(err));
 
