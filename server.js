@@ -117,7 +117,7 @@ app.get("/api/stats", (req, res) => {
 
 // API route used to retrieve full story, mainly just used for testing
 app.get("/api/story/all", (req, res) => {
-  db.Story.findAll({}, function (err, chapterInfo) {
+  db.Story.find({}, function (err, chapterInfo) {
     res.json(chapterInfo);
   });
 });
@@ -131,7 +131,7 @@ app.get("/api/story/:chapter", (req, res) => {
 
 // Send every other request to the React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 app.listen(PORT, () => {
