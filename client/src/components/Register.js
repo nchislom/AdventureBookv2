@@ -6,6 +6,7 @@ class Register extends Component {
 	state = {
 	  firstName: "",
 	  lastName: "",
+	  userName: "",
 	  password: ""
 	};
   
@@ -27,10 +28,10 @@ class Register extends Component {
 	  // Preventing the default behavior of the form submit (which is to refresh the page)
 	  event.preventDefault();
 	  if (!this.state.firstName || !this.state.lastName) {
-		alert("Fill out your first and last name please!");
+		alert("Please fill out all of the forms ");
 	  } else if (this.state.password.length < 6) {
 		alert(
-		  `Choose a more secure password ${this.state.firstName} ${this.state
+		  `Your password needs to be at least six characters ${this.state.firstName} ${this.state
 			.lastName}`
 		);
 	  } else {
@@ -39,16 +40,17 @@ class Register extends Component {
 
 	  API.saveUser({
         firstName: this.state.firstName,
-        lastName: this.state.lastName,
+		lastName: this.state.lastName,
+		userName: this.state.userName,
         password: this.state.password
 	  })
-	  console.log(this.state)
-        .then(res => this.getUsers())
+        // .then(res => this.getUsers())
         .catch(err => console.log(err));
 
 	  this.setState({
 		firstName: "",
 		lastName: "",
+		userName: "",
 		password: ""
 	  });
 	};
@@ -74,6 +76,13 @@ class Register extends Component {
 			  onChange={this.handleInputChange}
 			  type="text"
 			  placeholder="Last Name"
+			/>
+			<input
+			  value={this.state.userName}
+			  name="userName"
+			  onChange={this.handleInputChange}
+			  type="text"
+			  placeholder="User Name"
 			/>
 			<input
 			  value={this.state.password}
