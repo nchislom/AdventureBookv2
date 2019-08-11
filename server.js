@@ -162,14 +162,16 @@ app.post("/api/users", (req, res) => {
   });
 });
 
-// Send every other request to the React app
+// Send at admin page
 app.get("/admin", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/admin.html"));
+  console.log('admin route hit!');
+  res.sendFile(path.join(__dirname, "/client/public/admin.html"));
 });
 
 // Send every other request to the React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  console.log('all route hit');
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 app.listen(PORT, () => {
