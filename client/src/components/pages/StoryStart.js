@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route } from "react-router-dom";
 import Learn from "./Learn";
 
-function Contact(props) {
+function StoryStart(props) {
   return (
     <div>
       <h1>P1</h1>
@@ -27,4 +27,4 @@ function Contact(props) {
   );
 }
 
-export default Contact;
+export default StoryStart;

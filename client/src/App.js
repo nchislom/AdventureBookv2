@@ -4,17 +4,17 @@ import NavTabs from "./components/NavTabs";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Blog from "./components/pages/Blog";
-import Contact from "./components/pages/Contact";
+import StoryStart from "./components/pages/StoryStart";
 
 function App() {
   return (
     <Router>
       <div>
         <NavTabs />
-        <Route exact path="/" component={Contact} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/storystart" component={StoryStart} />
       </div>
     </Router>
   );
