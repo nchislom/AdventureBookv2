@@ -19,7 +19,7 @@ export default {
     return axios.get("/api/story/all");
   },
   // Get Part of Story
-  deleteBook: function(id) {
+  getStoryChapter: function(id) {
     return axios.get("/api/story/" + id);
   }
 };
