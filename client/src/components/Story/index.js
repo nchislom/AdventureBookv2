@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import StoryData from 
+import API from "../../utils"
 
 
 class Story extends Component {
