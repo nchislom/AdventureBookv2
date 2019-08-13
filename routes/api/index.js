@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 });
 
 // User routes (/api/user)
-router.use("/user", userRoutes);
+router.use("/users", userRoutes);
 
 // Story routes (/api/story)
 router.use("/story", storyRoutes);
