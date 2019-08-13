@@ -128,11 +128,11 @@ app.get("/api/stats", (req, res) => {
   });
   
   res.json({
-    "Current Story Size": storyLength,
-    "Registered Users": totalUsers,
-    "Global Wins": totalWins,
-    "User Collection Size": sizeUser,
-    "Story Collection Size": sizeStory
+    "storySize": storyLength,
+    "registeredUsers": totalUsers,
+    "globalWins": totalWins,
+    "userCollectionSize": sizeUser,
+    "storyCollectionSize": sizeStory
   });
 });
 
