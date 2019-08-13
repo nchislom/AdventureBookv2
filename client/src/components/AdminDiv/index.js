@@ -5,12 +5,9 @@ import AdminStoryGraph from "../AdminStoryGraph";
 import "./style.css";
 
 class AdminDiv extends Component {
-	// Setting the component's initial state
-	state = {};
-
 	render() {
 	  return (
-      <div>
+      <div className="AdminDiv">
         <AdminHeader>Game Master Console</AdminHeader>
         <AdminStatsTable />
         <AdminStoryGraph id="cy"></AdminStoryGraph>
