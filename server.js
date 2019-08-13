@@ -1,9 +1,11 @@
-const mongoose = require("mongoose");
 const express = require("express");
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+<<<<<<< HEAD
 var storyLength = 0;
 var totalUsers = 0;
 var totalWins = 0;
@@ -14,6 +16,8 @@ var sizeStory = 0;
 var db = require("./database/models");
 var storySeeds = require("./database/storySeeds");
 
+=======
+>>>>>>> 739accf058764f0484ab846d05009960dd3d0bda
 /* Notes on Heroku deployment
 * In order to deploy this project to Heroku, we must set up an mLab provision.
 * mLab is remote MongoDB database that Heroku supports natively.
@@ -33,11 +37,14 @@ mongoose.connect(MONGODB_URI);
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+<<<<<<< HEAD
 // API routes
 app.get("/api", (req, res) => {
   res.send(`
@@ -173,6 +180,10 @@ app.get("*", (req, res) => {
   console.log('all route hit');
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
+=======
+// Add routes
+app.use(routes);
+>>>>>>> 739accf058764f0484ab846d05009960dd3d0bda
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
