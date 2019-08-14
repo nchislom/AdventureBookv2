@@ -4,17 +4,17 @@ import API from "../../utils/API";
 
 class Story extends Component {
 
-  state = {
-    data : []
-  }
+  // state = {
+  //   data : []
+  // }
 
-  componentDidMount() {
-    API.getFullStory().then(res => {
-      this.setState({
-        data: res.data
-      },()=>console.log(this.state.data))
-    })
-  }
+  // componentDidMount() {
+  //   API.getFullStory().then(res => {
+  //     this.setState({
+  //       data: res.data
+  //     },()=>console.log(this.state.data))
+  //   })
+  // }
 
   render() {
     return (
