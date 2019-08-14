@@ -3,8 +3,6 @@ import Register from "./components/Register"
 import AdminDiv from "./components/AdminDiv";
 import Story from "./components/Story"
 
-console.log("Will this be on the client side?");
-
 class App extends Component {
   render() {
     return (
