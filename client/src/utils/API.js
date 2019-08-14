@@ -21,7 +21,15 @@ export default {
   getStoryObj: function() {
     return axios.get("/api/story/all");
   },
-    // Get Full Story
+  // Seed db (default story)
+  seedDb: function() {
+    return axios.get("/api/seed/12345");
+  },
+  // Seed db (new story)
+  seedDb: function() {
+    return axios.post("/api/seed/12345");
+  },
+  // Get Full Story
   getFullStory: function() {
     return axios.get("/api/story/all");
   },

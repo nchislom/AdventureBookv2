@@ -1,10 +1,21 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./style.css";
 
-const AdminRefreshButton = (props) => {
+class AdminRefreshButton extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
   return (
-    <button id="admin-refresh" className="pure-button pure-button-primary">Refresh Data</button>
-  );
+    <button
+      id="admin-refresh" 
+      className="pure-button pure-button-success"
+      onClick={ console.log("Refresh!") }>
+        Refresh Console
+    </button>
+  )};
 };
 
 export default AdminRefreshButton;

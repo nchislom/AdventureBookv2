@@ -28,6 +28,18 @@ class AdminStatsTable extends Component {
       this.setState({ storyObj: res });
     }).catch(err => console.log(err));
   };
+
+  // componentDidUpdate(prevState) {
+  //   if(this.state !== prevState) {
+  //     this.setState({
+  //       storySize: res.data.storySize,
+  //       registeredUsers: res.data.registeredUsers,
+  //       globalWins: res.data.globalWins,
+  //       storyCollectionSize: res.data.storyCollectionSize,
+  //       userCollectionSize: res.data.userCollectionSize
+  //     })
+  //   }
+  // }
   
   render() {
   return (
