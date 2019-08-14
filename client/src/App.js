@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "./utils/API";
 import Register from "./components/Register"
 import Story from "./components/Story"
 
@@ -30,14 +31,15 @@ class App extends Component {
             text={story.scene_text}
             nxtScene={story.next_scene}
             crctChoice={story.correct_choice}
-            choiceA={story.choice_a}
-            choiceB={story.choice_b}
+            choice_a={story.choice_a}
+            choice_b={story.choice_b}
             wrongChoiceText={story.wrong_choice_result}
           />
         ))}
         
       </div>
         
+    );
   }
 }
 
