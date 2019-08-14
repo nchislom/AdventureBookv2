@@ -11,7 +11,7 @@ var graphElements = [];
         let correctChoicePropName = seeds[i].correct_choice;
         let elementCorrectChoice = seeds[i][correctChoicePropName];
         let elementCorrectResult = seeds.filter(obj => { return obj.id === elementNextNum });
-        let elementCorrectId = seeds[i];
+        // let elementCorrectId = seeds[i];
         let choice_a_id = "choice_a_" + i;
         let choice_b_id = "choice_b_" + i;
 
@@ -79,54 +79,53 @@ var graphElements = [];
         }
     }
 
-    // REF: https://stackoverflow.com/questions/13964155/get-javascript-object-from-array-of-objects-by-value-of-property
-    // var result = seeds.filter(obj => { return obj.id === 6 });
-    
     var cy = cytoscape({
 
-        container: document.getElementById('cy'), // container to render in
-
+        container: document.getElementById("cy"), // container to render within
+        zoomingEnabled: false,
         elements: graphElements,
 
-        style: [ // the stylesheet for the graph
+        // the stylesheet for the graph
+        style: [
         {
-            selector: 'node',
-            style: {
-            'background-color': '#666',
-            'label': 'data(id)'
+            "selector": "node",
+            "style": {
+            "background-color": "#666",
+            "label": "data(id)"
             }
         },
         {
-            selector: 'edge',
-            style: {
-            'width': 3,
-            'line-color': '#cc6',
-            'target-arrow-color': '#fff',
-            'target-arrow-shape': 'triangle',
-            'mid-target-arrow-shape': 'vee',
-            'arrow-scale': 2
+            "selector": "edge",
+            "style": {
+            "width": 3,
+            "line-color": "#cc6",
+            "target-arrow-color": "#fff",
+            "target-arrow-shape": "triangle",
+            "mid-target-arrow-shape": "vee",
+            "arrow-scale": 3
             }
         },
         {
-            selector: '.chapter',
-            style: {
-            'font-size': '3em',
-            'color': '#f00'
+            "selector": ".chapter",
+            "style": {
+            "font-size": "3em",
+            "color": "#f00"
             }
         },
         {
-            selector: 'node',
-            style: {
-            'shape': 'ellipse'
+            "selector": "node",
+            "style": {
+            "shape": "ellipse"
             }
         }
         ],
 
-        layout: {
-        name: 'breadthfirst',
-        directed: true,
-        animate: true,
-        avoidOverlap: true
+        // Node layout options
+        "layout": {
+        "name": "breadthfirst",
+        "directed": true,
+        "animate": false,
+        "avoidOverlap": true
         }
 
     });

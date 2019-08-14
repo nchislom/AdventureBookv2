@@ -31,9 +31,9 @@ class AdminStatsTable extends Component {
   
   render() {
   return (
-    <table>
+    <table className="pure-table pure-table-bordered">
       <tbody>
-        <tr>
+        <tr className="pure-table-odd">
           <td>Current Story</td>
           <td>Adventure Book v2</td>
         </tr>
@@ -41,7 +41,7 @@ class AdminStatsTable extends Component {
           <td>Story Length</td>
           <td>{ this.state.storySize }</td>
         </tr>
-        <tr>
+        <tr className="pure-table-odd">
           <td>Registerd Users</td>
           <td>{ this.state.registeredUsers }</td>
         </tr>
@@ -49,7 +49,7 @@ class AdminStatsTable extends Component {
           <td>Global Wins</td>
           <td>{ this.state.globalWins }</td>
         </tr>
-        <tr>
+        <tr className="pure-table-odd">
           <td>Game Storage</td>
           <td>{ this.state.storyCollectionSize }</td>
         </tr>
