@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Register from "./components/Register"
+import Story from "./components/Story"
 
 
 class App extends Component {
@@ -7,6 +8,9 @@ class App extends Component {
     return (
       <div className="App">
       <Register />
+      <Story 
+        // <Options />
+      />
       </div>
     );
   }

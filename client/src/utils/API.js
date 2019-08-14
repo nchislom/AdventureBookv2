@@ -13,5 +13,13 @@ export default {
   // Registers a user to the database
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+    // Get Full Story
+  getFullStory: function() {
+    return axios.get("/api/story/all");
+  },
+  // Get Part of Story
+  getStoryChapter: function(id) {
+    return axios.get("/api/story/" + id);
   }
 };
