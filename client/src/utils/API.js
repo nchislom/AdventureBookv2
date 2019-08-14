@@ -20,5 +20,13 @@ export default {
   // Get db stats from the database
   getStoryObj: function() {
     return axios.get("/api/story/all");
+  },
+    // Get Full Story
+  getFullStory: function() {
+    return axios.get("/api/story/all");
+  },
+  // Get Part of Story
+  getStoryChapter: function(id) {
+    return axios.get("/api/story/" + id);
   }
 };
