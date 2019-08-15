@@ -26,7 +26,7 @@ export default {
     return axios.get("/api/seed/12345");
   },
   // Seed db (new story)
-  seedDb: function() {
+  uploadStory: function() {
     return axios.post("/api/seed/12345");
   },
   // Get Full Story
