@@ -20,9 +20,6 @@ router
                 console.log(err);
                 res.json(err);
             }
-            // if (userInfo.userName !== req.params.userName) {
-            //     console.log('userInfo does not match')
-            //   }
             console.log("dbUser: ", userInfo);
             res.json(userInfo);
         });
