@@ -16,7 +16,13 @@ router
     .route("/:userName/:password")
     .get((req, res) => {
         db.User.findOne({ userName: req.params.userName, password: req.params.password }, function (err, userInfo) {
-            if (err) throw err;
+            if (err) {
+                console.log(err);
+                res.json(err);
+            }
+            // if (userInfo.userName !== req.params.userName) {
+            //     console.log('userInfo does not match')
+            //   }
             console.log("dbUser: ", userInfo);
             res.json(userInfo);
         });
