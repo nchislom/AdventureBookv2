@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "./utils/API";
 import Register from "./components/Register"
-import AdminDiv from "./components/AdminDiv";
 import Story from "./components/Story"
+
 
 class App extends Component {
 
