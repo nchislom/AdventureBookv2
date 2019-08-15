@@ -7,8 +7,10 @@ import Story from "./components/Story"
 class App extends Component {
 
   state = {
-    data: []
-  }
+    data: [],
+    dataIndex: 0
+
+  };
 
   componentDidMount() {
     API.getFullStory().then(res => {
@@ -16,13 +18,17 @@ class App extends Component {
         data: res.data
       },()=>console.log(this.state.data))
     })
-  }
+  };
 
   render() {
+    let story = this.state.data[this.state.dataIndex]
+
     return (
-      <div className="App">
+      story
+      ? <div className="App">
         <Register />
-        {this.state.data.map(story => (
+        
+        
           <Story
             // props here
             // function for story flow?
@@ -35,10 +41,9 @@ class App extends Component {
             choice_b={story.choice_b}
             wrongChoiceText={story.wrong_choice_result}
           />
-        ))}
-        
+                
       </div>
-        
+      : <div />
     );
   }
 }
