@@ -1,0 +1,45 @@
+/* Imoprt for PureCSS Library */
+@import url("https://unpkg.com/purecss@1.0.1/build/pure-min.css");
+
+#cy {
+    width: 50%;
+    height: 100%;
+    margin: 2em auto;
+    /* padding: 5em 3em; */
+    /* overflow: clip; */
+    /* border: 1px solid black; */
+    /* display: block; */
+    position: absolute;
+}
+
+.pure-button {
+    margin: 1em auto;
+    padding: 1em;
+    display: block;
+    width: 20em;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
