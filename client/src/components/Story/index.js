@@ -35,7 +35,11 @@ import React, { Component } from "react";
 // }
 
 function Story(props) {
+  let crctChoice = props.crctChoice;
   return (
+
+    
+
     <div className="story">
 
       <h4>{props.text}</h4>

@@ -23,10 +23,14 @@ class App extends Component {
   // function to add to the index to progress through story
   // if user choose button w/ key/id of correct choice, render next part of story
 
+
   render() {
-    let story = this.state.data[this.state.dataIndex]
+    let story = this.state.data[this.state.dataIndex];
+    
+    
 
     return (
+      
       story
       ? <div className="App">
         <Register />
