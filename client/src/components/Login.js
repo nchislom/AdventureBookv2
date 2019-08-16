@@ -25,21 +25,6 @@ class Login extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    // if (this.state.password.length < 6) {
-    //   alert(
-    //     `Please enter a valid password ${this.state.userName}`
-    //   )
-    //   if (!this.state.userName || !this.state.password) {
-    //     console.log("Invalid user or password")
-    //   }
-    // } else {
-    //   alert(`Hello ${this.state.userName}`);
-    // }
-    // const userData = {
-    //   userName: this.state.userName,
-    //   password: this.state.password
-    // };
-    // console.log(userData);
 
     API.getUser(`${this.state.userName}/${this.state.password}`)
       .then(resp => {
@@ -49,11 +34,10 @@ class Login extends Component {
             notFound:
               "Sorry, that information does not match our records. Please try again."
           });
-        } 
-        else {
+        } else {
           this.setState({
             welcome: "Welcome, we hope you enjoy the story"
-          })
+          });
         }
       })
       .catch(err => console.log(err));
@@ -63,6 +47,14 @@ class Login extends Component {
       password: "",
       notFound: ""
     });
+    setTimeout(
+      () =>
+        this.setState({
+          welcome: "",
+          notFound: ""
+        }),
+      2000
+    );
   };
 
   render() {
@@ -86,7 +78,10 @@ class Login extends Component {
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
-        <modal>{this.state.notFound}{this.state.welcome}</modal>
+        <modal>
+          {this.state.notFound}
+          {this.state.welcome}
+        </modal>
       </div>
     );
   }
