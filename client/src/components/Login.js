@@ -69,8 +69,9 @@ class Login extends Component {
     return (
       <div>
         <p>Login</p>
-        <form className="pure-form pure-form-stacked">
+        <form className="pure-form pure-form-stacked centered-form">
           <input
+           className="form-input-centered"
             value={this.state.userName}
             name="userName"
             onChange={this.handleInputChange}
@@ -78,6 +79,7 @@ class Login extends Component {
             placeholder="User Name"
           />
           <input
+           className="form-input-centered"
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}

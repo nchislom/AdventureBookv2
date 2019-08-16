@@ -63,8 +63,9 @@ class Register extends Component {
 		  <p>
 			Register 
 		  </p>
-		  <form className="pure-form pure-form-stacked">
+		  <form className="pure-form pure-form-stacked centered-form">
 			<input
+			  className="form-input-centered"
 			  value={this.state.firstName}
 			  name="firstName"
 			  onChange={this.handleInputChange}
@@ -72,6 +73,7 @@ class Register extends Component {
 			  placeholder="First Name"
 			/>
 			<input
+			  className="form-input-centered"
 			  value={this.state.lastName}
 			  name="lastName"
 			  onChange={this.handleInputChange}
@@ -79,6 +81,7 @@ class Register extends Component {
 			  placeholder="Last Name"
 			/>
 			<input
+			  className="form-input-centered"
 			  value={this.state.userName}
 			  name="userName"
 			  onChange={this.handleInputChange}
@@ -86,6 +89,7 @@ class Register extends Component {
 			  placeholder="User Name"
 			/>
 			<input
+			  className="form-input-centered"
 			  value={this.state.password}
 			  name="password"
 			  onChange={this.handleInputChange}

@@ -1,2 +1,17 @@
-@import url("https://unpkg.com/purecss@1.0.1/build/pure-min.css");
+.centered-form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 3px solid blue;
+    border-radius: 4px;
+    padding: 24px;
+    background-color: gray;
+}
+
+.form-input-centered {
+   flex-basis: 65%;
+}
 
