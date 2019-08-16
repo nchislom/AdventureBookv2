@@ -69,9 +69,10 @@ class Story extends Component {
           <button onClick={() => this.handleUserChoice(story.correct_choice === "choice_a")}>{story.choice_a}</button>
           <button onClick={() => this.handleUserChoice(story.correct_choice === "choice_b")}>{story.choice_b}</button>
           {/* <button>{story.correct_choice}</button> */}
-        </div> ||
-        <WrongModal 
-        story/>
+        </div> 
+        // ||
+        // <WrongModal 
+        // story/>
       : <div></div>
     )
     
