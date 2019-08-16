@@ -69,7 +69,8 @@ router
         if(req.params.key === "12345"){
             res.send("File upload complete!");
             console.log(typeof(req.body));
-            console.log(req.body);
+            let storyFile = req.body;
+            console.log(storyFile.story);
             // Empty Story collection
             // db.Story.remove({}, function(err) {
             //     console.log("Existing story collection cleared.");

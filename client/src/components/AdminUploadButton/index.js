@@ -18,12 +18,11 @@ class AdminUploadButton extends Component {
 
         reader.onload = function(e) {
             var text = reader.result;
-            // console.log(text);
-            // storyjson = JSON.parse(text);
-            // console.log(storyjson);
+            storyjson = JSON.parse(text);
+            console.log(storyjson);
             fetch("/api/seed/12345", {
-                method: 'POST', // or 'PUT'
-                body: text, // data can be `string` or {object}!
+                method: 'POST',
+                body: text,
                 headers:{
                   'Content-Type': 'application/json'
                 }
