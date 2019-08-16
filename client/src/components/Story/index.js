@@ -6,7 +6,10 @@ class Story extends Component {
   
     state = {
       data : [],
-      dataIndex: 0
+      dataIndex: 0,
+      // correctChoice: data[dataIndex].correct_choice
+      userChosePoorly: false
+      
     }
 
   componentDidMount() {
@@ -15,6 +18,32 @@ class Story extends Component {
         data: res.data
       },()=>console.log(this.state.data))
     })
+  };
+
+  handleUserChoice = correct => {
+    // alert("you clicked a button");
+    let story = this.state.data[this.state.dataIndex];
+    // let crrctChoice = story.correct_choice;
+
+    // console.log(event)
+
+    if (correct) {
+      // alert("Oh Shit!");
+      // add to the state dataindex to progress story
+      this.setState({
+        dataIndex: this.state.dataIndex + 1,
+      });
+    } else {
+      // pop-up modal of wrong_choice_result
+      // <WrongModal />
+      alert (story.wrong_choice_result)
+      this.setState({
+        userChosePoorly: true,
+        // when true show WrongModal
+      });
+    }
+
+    
   };
 
   // this.props = {
@@ -30,17 +59,23 @@ class Story extends Component {
 
   render() {
     let story = this.state.data[this.state.dataIndex];
+    // let crrctChoice = story.;
+    // console.log(crrctChoice); 
 
     return (
       story ?
         <div className="story">
           <h4>{story.scene_text}</h4>
-          <button>{story.choice_a}</button>
-          <button>{story.choice_b}</button>
-        </div>
-        
-        : <div></div>
+          <button onClick={() => this.handleUserChoice(story.correct_choice === "choice_a")}>{story.choice_a}</button>
+          <button onClick={() => this.handleUserChoice(story.correct_choice === "choice_b")}>{story.choice_b}</button>
+          {/* <button>{story.correct_choice}</button> */}
+        </div> 
+        // ||
+        // <WrongModal 
+        // story/>
+      : <div></div>
     )
+    
   }
 }
 
