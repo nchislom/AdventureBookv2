@@ -3,7 +3,7 @@
     height: 100%;
     margin: 3em;
     overflow: clip;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* display: block; */
     position: absolute;
 }

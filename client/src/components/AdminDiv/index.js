@@ -13,15 +13,15 @@ class AdminDiv extends Component {
       <div className="AdminDiv">
         <AdminHeader>Game Master Console</AdminHeader>
         <div className="pure-g">
-          <div class="pure-u-1-4">
+          <div class="pure-u-1-3">
             <AdminStatsTable />
           </div>
-          <div class="pure-u-1-4">
+          <div class="pure-u-1-3">
             <AdminRefreshButton />
             <AdminSeedButton />
             <AdminFileInput />
           </div>
-          <div class="pure-u-1-2">
+          <div class="pure-u-1-3">
             <AdminStoryGraph id="cy" />
           </div>
         </div>

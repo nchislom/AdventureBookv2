@@ -17,10 +17,6 @@ class AdminStoryGraph extends Component {
   };
   
   render() {
-    var cy = cytoscape({ elements: [
-      { data: { id: 'a' }},
-      { data: { id: 'b' }},
-      { data: { id: 'ab', source: 'a', target: 'b' }}] });
   return (
     <div id={ this.props.id } />
   )};
