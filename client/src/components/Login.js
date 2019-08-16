@@ -69,7 +69,7 @@ class Login extends Component {
     return (
       <div>
         <p>Login</p>
-        <form className="form">
+        <form className="pure-form pure-form-stacked">
           <input
             value={this.state.userName}
             name="userName"
@@ -84,7 +84,7 @@ class Login extends Component {
             type="password"
             placeholder="Password"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button className="pure-button pure-button-primary" onClick={this.handleFormSubmit}>Submit</button>
         </form>
         <modal>{this.state.notFound}{this.state.welcome}</modal>
       </div>
