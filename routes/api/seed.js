@@ -8,9 +8,9 @@ const storySeeds = require("../../database/storySeeds");
 // Setup body-parser middle-ware
 // app.use(express.json());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
-app.use(bodyParser.text());
+// app.use(bodyParser.text());
 
 // API route used to retrieve full story, mainly just used for testing
 router
@@ -67,10 +67,17 @@ router
     .route("/:key")
     .post((req, res) => {    
         if(req.params.key === "12345"){
-            console.log("Seeds POST route hit!");
+            res.send("File upload complete!");
+            console.log(typeof(req.body));
             console.log(req.body);
-            // res.send(req.body);
-            res.json(req.body);
+            // Empty Story collection
+            // db.Story.remove({}, function(err) {
+            //     console.log("Existing story collection cleared.");
+            //     if(err){
+            //         console.log(err);
+            //     }
+            // });
+
         } else {
             res.send("File upload failed!");
         }

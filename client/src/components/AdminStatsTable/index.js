@@ -63,11 +63,11 @@ class AdminStatsTable extends Component {
         </tr>
         <tr className="pure-table-odd">
           <td>Game Storage</td>
-          <td>{ this.state.storyCollectionSize }</td>
+          <td>{ this.state.storyCollectionSize + " bytes"}</td>
         </tr>
         <tr>
           <td>User Storage</td>
-          <td>{ this.state.userCollectionSize }</td>
+          <td>{ this.state.userCollectionSize + " bytes"}</td>
         </tr>
       </tbody>
     </table>

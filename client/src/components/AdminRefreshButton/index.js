@@ -11,8 +11,7 @@ class AdminRefreshButton extends Component {
   return (
     <button
       id="admin-refresh" 
-      className="pure-button pure-button-success"
-      onClick={ console.log("Refresh!") }>
+      className="pure-button pure-button-success">
         Refresh Console
     </button>
   )};
