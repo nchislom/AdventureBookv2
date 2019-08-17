@@ -68,7 +68,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <p>Login</p>
+        <p className="admin-font">Login</p>
         <form className="pure-form pure-form-stacked centered-form">
           <input
            className="form-input-centered"
