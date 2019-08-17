@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import storyGraph from "./storyGraph";
 import "./style.css";
-import cytoscape from "cytoscape";
-
 class AdminStoryGraph extends Component {
 
   state = {};
@@ -17,10 +15,6 @@ class AdminStoryGraph extends Component {
   };
   
   render() {
-    var cy = cytoscape({ elements: [
-      { data: { id: 'a' }},
-      { data: { id: 'b' }},
-      { data: { id: 'ab', source: 'a', target: 'b' }}] });
   return (
     <div id={ this.props.id } />
   )};

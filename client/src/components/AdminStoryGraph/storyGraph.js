@@ -76,7 +76,7 @@ var graphElements = [];
         zoom: (0.5),
         minZoom: (2.0),
         maxZoom: (0.25),
-        zoomingEnabled: true,
+        userZoomingEnabled: false,
         elements: graphElements,
 
         // the stylesheet for the graph
@@ -99,12 +99,6 @@ var graphElements = [];
                 "mid-target-arrow-shape": "vee",
                 "arrow-scale": 3
             }
-        },
-        {
-            "selector": "scene",
-            "style": {
-                "font-size": "1em"
-            }
         }
         ],
 
@@ -113,9 +107,8 @@ var graphElements = [];
             "name": "breadthfirst",
             "fit": true,
             "directed": true,
-            "circle": false,
             "animate": false,
-            "grid": true,
+            "grid": false,
             "avoidOverlap": true
         }
 
