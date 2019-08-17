@@ -9,13 +9,13 @@ class Register extends Component {
     userName: "",
     password: "",
     forms: "",
-    passwordLength: ""
+	passwordLength: "",
+	welcome: "",
+	userNameTaken: ""
   };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
-    //   let value = event.target.value;
-    //   const name = event.target.name;
     let { name, value } = event.target;
     if (name === "password") {
       value = value.substring(0, 15);
@@ -39,7 +39,8 @@ class Register extends Component {
         forms: "Please fill out all of the forms. "
       });
     }
-    if (this.state.password < 6) {
+	
+	if (this.state.password < 6) {
       this.setState({
         passwordLength: "Your password must be at least 6 characters."
       });
@@ -50,8 +51,20 @@ class Register extends Component {
       lastName: this.state.lastName,
       userName: this.state.userName,
       password: this.state.password
-    })
-      // .then(res => this.getUsers())
+    }).then(resp => {
+		if (resp.data !== null) {
+			console.log("Hi ")
+			this.setState({
+				welcome: "Thanks for registering.  You're all set to login."
+			})
+		} 
+		else{
+			this.setState({
+				userNameTaken: "Sorry, that user name is taken"
+			})
+		}
+	})
+     
       .catch(err => console.log(err));
 
     this.setState({
@@ -64,7 +77,9 @@ class Register extends Component {
 	setTimeout(
 		() => this.setState({
 			forms: "",
-			passwordLength: ""
+			passwordLength: "",
+			welcome: "",
+			userNameTaken: ""
 		}),
 		2000
 	)};
@@ -107,7 +122,9 @@ class Register extends Component {
         </form>
         <modal>
           {this.state.forms}
-          {this.state.passwordLength}
+		  {this.state.passwordLength}
+		  {this.state.welcome}
+		  {this.state.userNameTaken}
         </modal>
       </div>
     );
