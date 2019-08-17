@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import API from "../../utils/API";
+import "./style.css";
 
 class AdminUploadButton extends Component {
     constructor(props) {
@@ -36,17 +36,20 @@ class AdminUploadButton extends Component {
     render() {
         return (
             this.props.selectedFile ?
-                <button
-                    id="upload-button" 
-                    className="pure-button button-secondary"
-                    onClick={ this.onClickHandler }>
-                    Upload File to Database
-                </button>
-            :   <button
-                    id="upload-button" 
-                    className="pure-button">
-                    Upload File to Database
-                </button>
+            // If selected file prop is not set, a disabled button will display
+            <button
+                id="upload-button" 
+                className="pure-button button-error"
+                onClick={ this.onClickHandler }>
+                Upload File to Database<br/>
+                <small>Please refer to documentation before using!</small>
+            </button>
+            :
+            <button
+                id="upload-button" 
+                className="pure-button">
+                Upload File to Database
+            </button>
     )};
 };
 
