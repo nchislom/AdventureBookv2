@@ -5,10 +5,20 @@ const db = require("../../database/models");
 router
     .route("/")
     .post((req, res) => {
-        db.User.create(req.body, function (err, userInfo) {
-            if (err) throw err;
-            console.log(userInfo);
-            res.json(userInfo);
+        db.User.findOne({ userName: req.body.userName}, function (err, userInfo) {
+            if (err) throw err; 
+            console.log('Existing user: ', userInfo)
+            
+            if(!userInfo) {
+                db.User.create(req.body, function (err, userInfo) {
+                    if (err) throw err;
+                    console.log("New user", userInfo);
+                    res.json(userInfo);
+                });
+            } else {
+                console.log("userName taken: ");
+                res.json(err)
+            }
         });
     });
 
