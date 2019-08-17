@@ -12,8 +12,8 @@ const StorySchema = new Schema(
     correct_choice: String,
     choice_a: String,
     choice_b: String,
-    wrong_choice_result: String
-    // image_url: ""
+    wrong_choice_result: String,
+    image_url: String
   },
   { timestamps: false }
 );
