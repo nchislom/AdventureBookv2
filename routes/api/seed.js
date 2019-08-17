@@ -72,13 +72,22 @@ router
             let storyFile = req.body;
             console.log(storyFile.story);
             // Empty Story collection
-            // db.Story.remove({}, function(err) {
-            //     console.log("Existing story collection cleared.");
-            //     if(err){
-            //         console.log(err);
-            //     }
-            // });
+            db.Story.remove({}, function(err) {
+                console.log("Existing story collection cleared.");
+                if(err){
+                    console.log(err);
+                }
+            });
 
+            // Seed new game collection
+            db.Story
+                .insertMany(storyFile.story, function(err, docs) {
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log(`Story collection successfully created!`);
+                    }
+                });
         } else {
             res.send("File upload failed!");
         }

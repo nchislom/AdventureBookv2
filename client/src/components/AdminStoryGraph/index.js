@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import storyGraph from "./storyGraph";
 import "./style.css";
-// import cytoscape from "cytoscape";
-
 class AdminStoryGraph extends Component {
 
   state = {};
