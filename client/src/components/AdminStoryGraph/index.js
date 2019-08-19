@@ -6,7 +6,7 @@ class AdminStoryGraph extends Component {
 
   state = {};
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     // Store storyObj in state
     API.getStoryObj().then(res => {
       this.setState({ res });
