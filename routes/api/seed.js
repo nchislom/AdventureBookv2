@@ -19,14 +19,6 @@ router
         // Method used to prevent unauthorized seeding of production db
         // We can setup a more unique key in a secure environment variable down the road
         if(req.params.key === "12345"){
-        
-            // Empty Story collection
-            db.Story.remove({}, function(err) {
-                console.log("Existing story collection cleared.");
-                if(err){
-                    console.log(err);
-                }
-            });
 
             // Create a default admin user if not found in DB
             db.User
@@ -49,14 +41,17 @@ router
             
             // Bulk inserts storySeeds array as defined in /database/storySeeds.js
             // Can be adapted to accept json in req.body, empty collection, and re-seed (baby framework for story creation)
-            db.Story
-                .insertMany(storySeeds, { ordered: true },  function(err, docs) {
-                    if(err){
-                        console.log(err);
-                    } else {
-                        console.log(`Story collection successfully created!`);
-                    }
-                });
+             db.Story.db.collection('stories').drop({}).then(() => {
+                db.Story
+                    .insertMany(storySeeds, { ordered: true },  function(err, docs) {
+                        if(err){
+                            console.log(err);
+                        } else {
+                            console.log(`Story collection successfully created!`);
+                        }
+                    });
+                }
+            );
             res.send("Database seeded successfully!");
         } else {
             res.send("Database seeding failed.");
