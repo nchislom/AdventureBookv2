@@ -10,6 +10,8 @@ class AdminStoryGraph extends Component {
     // Store storyObj in state
     API.getStoryObj().then(res => {
       this.setState({ res });
+      console.log(res.data);
+      console.log(this.state.data);
       storyGraph(res.data);
     }).catch(err => console.log(err));
   };
