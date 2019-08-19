@@ -50,7 +50,7 @@ router
             // Bulk inserts storySeeds array as defined in /database/storySeeds.js
             // Can be adapted to accept json in req.body, empty collection, and re-seed (baby framework for story creation)
             db.Story
-                .insertMany(storySeeds, function(err, docs) {
+                .insertMany(storySeeds, { ordered: true },  function(err, docs) {
                     if(err){
                         console.log(err);
                     } else {
@@ -81,7 +81,7 @@ router
 
             // Seed new game collection
             db.Story
-                .insertMany(storyFile.story, function(err, docs) {
+                .insertMany(storyFile.story, { ordered: true }, function(err, docs) {
                     if(err){
                         console.log(err);
                     } else {
