@@ -12,7 +12,7 @@ class AdminStoryGraph extends Component {
       this.setState({ res });
       console.log(res.data);
       // console.log(this.state.data);
-      storyGraph(this.state.data);
+      storyGraph(this.state.res.data);
     }).catch(err => console.log(err));
   };
   
